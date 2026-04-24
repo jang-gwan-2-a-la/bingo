@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jang-gwan-ho-bingo.netlify.app/">
+    <meta property="og:title" content="준비된 교육전문가 장관호 예비후보 정책공약 빙고">
+    <meta property="og:description" content="광주·전남 교육 바꿀 16가지 약속을 확인하세요!">
+    <meta property="og:image" content="https://jang-gwan-ho-bingo.netlify.app/images/main.png">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정책 빙고판</title>
+    <style>
+        body { margin: 0; padding: 0; display: flex; justify-content: center; background: #fff; }
+        .container { width: 100%; max-width: 1200px; } /* 이미지 원본 크기에 맞춰 조절 */
+        img { width: 100%; height: auto; display: block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="images/main.png" usemap="#image-map">
+
+    <map name="image-map">
+        <area target="_self" alt="공약1" href="view.html?id=1" coords="341,571,90,323" shape="rect">
+        <area target="_self" alt="공약2" href="view.html?id=2" coords="587,571,344,317" shape="rect">
+        <area target="_self" alt="공약3" href="view.html?id=3" coords="842,569,592,322" shape="rect">
+        <area target="_self" alt="공약4" href="view.html?id=4" coords="1091,567,850,317" shape="rect">
+        <area target="_self" alt="공약5" href="view.html?id=5" coords="98,579,332,816" shape="rect">
+        <area target="_self" alt="공약6" href="view.html?id=6" coords="350,582,584,816" shape="rect">
+        <area target="_self" alt="공약7" href="view.html?id=7" coords="598,581,840,814" shape="rect">
+        <area target="_self" alt="공약8" href="view.html?id=8" coords="853,580,1091,813" shape="rect">
+        <area target="_self" alt="공약9" href="view.html?id=9" coords="98,836,333,1070" shape="rect">
+        <area target="_self" alt="공약10" href="view.html?id=10" coords="349,830,589,1075" shape="rect">
+        <area target="_self" alt="공약11" href="view.html?id=11" coords="597,832,841,1071" shape="rect">
+        <area target="_self" alt="공약12" href="view.html?id=12" coords="854,830,1089,1069" shape="rect">
+        <area target="_self" alt="공약13" href="view.html?id=13" coords="92,1082,337,1324" shape="rect">
+        <area target="_self" alt="공약14" href="view.html?id=14" coords="349,1087,589,1324" shape="rect">
+        <area target="_self" alt="공약15" href="view.html?id=15" coords="602,1081,844,1323" shape="rect">
+        <area target="_self" alt="공약16" href="view.html?id=16" coords="852,1081,1095,1323" shape="rect">
+    </map>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
+<script>
+    // 페이지 로드 시 이미지맵 좌표를 화면 크기에 맞게 재계산합니다.
+    document.addEventListener('DOMContentLoaded', function() {
+        imageMapResize();
+    });
+
+</script>
+
+<script>
+    // 누적 방문자 수를 저장할 변수
+    let totalVisits = "로딩 중...";
+
+    // 더 안정적인 HITS API로 교체
+    // ID: edu-bingo-2026-jgh (중복 방지를 위해 조금 더 고유하게 변경)
+    const gateWay = 'https://hits.seeyoufarm.com/api/count/incr/badge.json?url=https://jang-gwan-ho-bingo.netlify.app/&count_bg=%23000000&title_bg=%23000000&title=visits&edge_flat=false';
+
+    fetch(gateWay)
+        .then(response => response.json())
+        .then(data => {
+            // HITS API는 'count'라는 키로 숫자를 줍니다.
+            totalVisits = data.count;
+            console.log("========================================");
+            console.log("📊 [관리자] 광주·전남 교육 빙고 접속 통계");
+            console.log("▶ 누적 방문자 수: " + totalVisits + "명");
+            console.log("========================================");
+        })
+        .catch(err => {
+            console.log("통계 서비스 준비 중입니다.");
+        });
+</script>
+
+</body>
+</html>
